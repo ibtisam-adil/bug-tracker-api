@@ -18,7 +18,7 @@ local:
 google:
   service: GCS
   project: active-storage-421918
-  credentials: <%= ENV['GOOGLE_CREDENTIALS'] %>
+  credentials: <%= Rails.application.credentials.dig(:google, :gcs_keyfile) %>
   bucket: fast-lane-racers
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
